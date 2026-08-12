@@ -5,10 +5,10 @@ const DOTS = [0, 1, 2]
 
 export default function Hero() {
   return (
-    <section className="hero-section" id="home">
+    <section className="hero-section" id="home" aria-labelledby="hero-title">
       {/* Left: text content */}
       <div className="hero-section__content">
-        <h1 className="hero-section__title">
+        <h1 id="hero-title" className="hero-section__title">
           Lessons and insights{' '}
           <span>from 8 years</span>
         </h1>

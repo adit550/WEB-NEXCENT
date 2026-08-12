@@ -70,7 +70,6 @@ export default function Navbar() {
         id="mobile-menu"
         className={`navbar__mobile-menu${menuOpen ? ' navbar__mobile-menu--open' : ''}`}
         aria-hidden={!menuOpen}
-        inert={!menuOpen || undefined}
       >
         <ul className="navbar__mobile-links">
           {NAV_LINKS.map((link) => (

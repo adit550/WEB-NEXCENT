@@ -3,7 +3,7 @@ import howToImage from '../assets/feature-highlight.png'
 
 export default function HowTo() {
   return (
-    <section className="howto-section">
+    <section className="howto-section" aria-labelledby="howto-title">
       {/* Left: illustration */}
       <div className="howto-section__image">
         <img
@@ -15,14 +15,14 @@ export default function HowTo() {
 
       {/* Right: content */}
       <div className="howto-section__content">
-        <h2 className="howto-section__title">
+        <h2 id="howto-title" className="howto-section__title">
           How to design your site footer like we did
         </h2>
         <p className="howto-section__description">
-          Donec a eros justo. Fusce egestas tristique ultrices. Nam tempor,
-          augue nec tincidunt molestie, massa nunc varius arcu, at scelerisque
-          elit erat a magna. Donec eu orci eu risus tincidunt fermentum.
-          Fusce ac felis sit amet ligula pharetra condimentum.
+          A well-designed footer helps visitors navigate your site, find
+          important links, and connect with your brand. Learn how Nexcent
+          approached footer design with clarity, structure, and accessibility
+          in mind. Discover how you can apply the same principles to your own site.
         </p>
         <Button label="Learn more" variant="primary" />
       </div>

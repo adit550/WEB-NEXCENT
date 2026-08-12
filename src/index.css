@@ -20,6 +20,12 @@
   --color-dark: #263238;
   --color-dark-bg: #1d1e2c;
 
+  /* Dark section text colors */
+  --color-dark-text-primary: #d1d5db;
+  --color-dark-text-secondary: #9ca3af;
+  --color-dark-text-muted: #4b5563;
+  --color-primary-hover: #66bb6a;
+
   --color-white: #ffffff;
 
   /* Typography — Inter with system-ui fallback chain */

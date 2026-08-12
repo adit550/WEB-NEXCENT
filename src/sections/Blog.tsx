@@ -36,10 +36,10 @@ const BLOG_POSTS: BlogPost[] = [
 
 export default function Blog() {
   return (
-    <section className="blog-section">
+    <section className="blog-section" id="faq" aria-labelledby="blog-title">
       <div className="blog-section__inner">
         <div className="blog-section__header">
-          <h2 className="blog-section__title">Caring is the new marketing</h2>
+          <h2 id="blog-title" className="blog-section__title">Caring is the new marketing</h2>
           <p className="blog-section__subtitle">
             The ability to capture memories and moments is a beautiful gift.
             Read our stories.
@@ -53,6 +53,7 @@ export default function Blog() {
                 src={post.image}
                 alt={post.imageAlt}
                 className="blog-section__img"
+                loading="lazy"
               />
               <div className="blog-section__body">
                 <span className="blog-section__category">{post.category}</span>

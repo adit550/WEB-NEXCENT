@@ -2,9 +2,9 @@ import clientLogos from '../assets/clients-logos.svg'
 
 export default function Clients() {
   return (
-    <section className="clients-section">
+    <section className="clients-section" aria-labelledby="clients-title">
       <div className="clients-section__header">
-        <h2 className="clients-section__title">Our Clients</h2>
+        <h2 id="clients-title" className="clients-section__title">Our Clients</h2>
         <p className="clients-section__subtitle">
           We have been working with some Fortune 500+ clients
         </p>

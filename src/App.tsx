@@ -14,8 +14,14 @@ import './App.css'
 export default function App() {
   return (
     <>
+      {/* Skip-to-content: hanya terlihat saat keyboard focus, tidak mengganggu layout normal */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
+
       <Navbar />
-      <main>
+
+      <main id="main-content">
         <Hero />
         <Clients />
         <Features />
@@ -26,6 +32,7 @@ export default function App() {
         <Blog />
         <CTABanner />
       </main>
+
       <Footer />
     </>
   )

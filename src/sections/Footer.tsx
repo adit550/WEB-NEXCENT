@@ -71,7 +71,7 @@ const SOCIAL_LINKS: SocialLink[] = [
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
-        <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="white" />
+        <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" />
       </svg>
     ),
   },
@@ -96,7 +96,7 @@ export default function Footer() {
             />
           </a>
           <p className="footer__tagline">
-            Copyright © 2020 Nexcent ltd.
+            Copyright © {new Date().getFullYear()} Nexcent ltd.
             <br />
             All rights reserved
           </p>
