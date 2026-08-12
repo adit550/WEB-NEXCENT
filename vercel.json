@@ -1,8 +1,5 @@
 {
   "installCommand": "npm install",
   "buildCommand": "vite build",
-  "outputDirectory": "dist",
-  "engines": {
-    "node": "22.x"
-  }
+  "outputDirectory": "dist"
 }
