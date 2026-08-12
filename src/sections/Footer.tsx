@@ -1,5 +1,5 @@
 import { type FormEvent, type ReactNode } from 'react'
-import logo2 from '../assets/logo2.svg'
+import logo2 from '../assets/Logo2.svg'
 
 interface FooterLinkGroup {
   heading: string
