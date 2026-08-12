@@ -1,21 +1,16 @@
 import { useState } from 'react'
 import Button from './Button'
 import nexcentLogo from '../assets/Logo.svg'
-
-const NAV_LINKS = [
-  { label: 'Home', href: '#' },
-  { label: 'Service', href: '#service' },
-  { label: 'Product', href: '#product' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Testimonial', href: '#testimonial' },
-  { label: 'FAQ', href: '#faq' },
-]
+import { useAsyncData } from '../hooks/useAsyncData'
+import { fetchNavLinks } from '../api/nav'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { data: navLinks } = useAsyncData(fetchNavLinks)
+
+  const links = navLinks ?? []
 
   return (
-    // position: relative diperlukan agar mobile drawer (position: absolute) menempel ke navbar
     <header className="navbar">
       <div className="navbar__inner">
         {/* Logo */}
@@ -31,7 +26,7 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="navbar__nav" aria-label="Main navigation">
           <ul className="navbar__links">
-            {NAV_LINKS.map((link, i) => (
+            {links.map((link, i) => (
               <li key={link.label}>
                 <a
                   href={link.href}
@@ -65,14 +60,14 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile drawer — position absolute relatif terhadap .navbar */}
+      {/* Mobile drawer */}
       <div
         id="mobile-menu"
         className={`navbar__mobile-menu${menuOpen ? ' navbar__mobile-menu--open' : ''}`}
         aria-hidden={!menuOpen}
       >
         <ul className="navbar__mobile-links">
-          {NAV_LINKS.map((link) => (
+          {links.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}

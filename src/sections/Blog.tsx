@@ -1,40 +1,8 @@
-import blog1 from '../assets/blog-1.jpg'
-import blog2 from '../assets/blog-2.jpg'
-import blog3 from '../assets/blog-3.jpg'
-
-interface BlogPost {
-  id: number
-  title: string
-  category: string
-  image: string
-  imageAlt: string
-}
-
-const BLOG_POSTS: BlogPost[] = [
-  {
-    id: 1,
-    category: 'Safeguarding',
-    title: 'Creating Streamlined Safeguarding Processes with OneRen',
-    image: blog1,
-    imageAlt: 'Person working on a laptop in a cozy indoor setting',
-  },
-  {
-    id: 2,
-    category: 'Responsibilities',
-    title: 'What are your safeguarding responsibilities and how can you manage them?',
-    image: blog2,
-    imageAlt: 'Hands on a laptop displaying spreadsheet data on a desk with coffee',
-  },
-  {
-    id: 3,
-    category: 'Membership',
-    title: 'Revamping the Membership Model with Triathlon Australia',
-    image: blog3,
-    imageAlt: 'Top-down view of hands typing on a laptop with a notebook and plant nearby',
-  },
-]
+import { useBlog } from '../hooks/useBlog'
 
 export default function Blog() {
+  const { data: posts, loading, error } = useBlog()
+
   return (
     <section className="blog-section" id="faq" aria-labelledby="blog-title">
       <div className="blog-section__inner">
@@ -46,25 +14,29 @@ export default function Blog() {
           </p>
         </div>
 
-        <ul className="blog-section__list">
-          {BLOG_POSTS.map((post) => (
-            <li key={post.id} className="blog-section__item">
-              <img
-                src={post.image}
-                alt={post.imageAlt}
-                className="blog-section__img"
-                loading="lazy"
-              />
-              <div className="blog-section__body">
-                <span className="blog-section__category">{post.category}</span>
-                <h3 className="blog-section__post-title">{post.title}</h3>
-                <a href="#" className="blog-section__read-more">
-                  Read more →
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {error && <p className="blog-section__error" role="alert">{error}</p>}
+
+        {!loading && !error && posts && (
+          <ul className="blog-section__list">
+            {posts.map((post) => (
+              <li key={post.id} className="blog-section__item">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  className="blog-section__img"
+                  loading="lazy"
+                />
+                <div className="blog-section__body">
+                  <span className="blog-section__category">{post.category}</span>
+                  <h3 className="blog-section__post-title">{post.title}</h3>
+                  <a href="#" className="blog-section__read-more">
+                    Read more →
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   )
