@@ -6,30 +6,34 @@ const DOTS = [0, 1, 2]
 export default function Hero() {
   return (
     <section className="hero-section" id="home" aria-labelledby="hero-title">
-      {/* Left: text content */}
-      <div className="hero-section__content">
-        <h1 id="hero-title" className="hero-section__title">
-          Lessons and insights{' '}
-          <span>from 8 years</span>
-        </h1>
-        <p className="hero-section__subtitle">
-          Where to grow your business as a photographer: site or social media?
-        </p>
-        <div className="hero-section__cta">
-          <Button label="Register" variant="primary" />
+
+      {/* Top row: content + illustration */}
+      <div className="hero-section__row">
+        {/* Left: text content */}
+        <div className="hero-section__content">
+          <h1 id="hero-title" className="hero-section__title">
+            Lessons and insights{' '}
+            <span>from 8 years</span>
+          </h1>
+          <p className="hero-section__subtitle">
+            Where to grow your business as a photographer: site or social media?
+          </p>
+          <div className="hero-section__cta">
+            <Button label="Register" variant="primary" />
+          </div>
+        </div>
+
+        {/* Right: illustration */}
+        <div className="hero-section__image">
+          <img
+            src={heroImage}
+            alt="Nexcent platform illustration showing a developer working with code on a monitor"
+            className="hero-section__img"
+          />
         </div>
       </div>
 
-      {/* Right: illustration */}
-      <div className="hero-section__image">
-        <img
-          src={heroImage}
-          alt="Nexcent platform illustration showing a developer working with code on a monitor"
-          className="hero-section__img"
-        />
-      </div>
-
-      {/* Carousel dots — center bottom of section */}
+      {/* Bottom: carousel dots centered */}
       <div className="hero-section__dots" aria-hidden="true">
         {DOTS.map((i) => (
           <span
@@ -38,6 +42,7 @@ export default function Hero() {
           />
         ))}
       </div>
+
     </section>
   )
 }

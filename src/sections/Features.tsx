@@ -1,28 +1,13 @@
 import { useFeatures } from '../hooks/useFeatures'
 import type { FeatureIconMap } from '../hooks/useFeatures'
+import icon4 from '../assets/Icon (4).svg'
+import icon1 from '../assets/Icon (1).svg'
+import icon2 from '../assets/Icon (2).svg'
 
 const ICON_MAP: FeatureIconMap = {
-  1: (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" strokeWidth="2" fill="none" />
-      <circle cx="16" cy="15" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M8 26c0-3.314 3.582-6 8-6s8 2.686 8 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-    </svg>
-  ),
-  2: (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="16" cy="16" r="11" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M5 16h22M16 5c-3 4-3 18 0 22M16 5c3 4 3 18 0 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-    </svg>
-  ),
-  3: (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-      <circle cx="10" cy="13" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
-      <circle cx="22" cy="13" r="4" stroke="currentColor" strokeWidth="2" fill="none" />
-      <path d="M2 26c0-3.314 3.582-6 8-6s8 2.686 8 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-      <path d="M22 20c2.761 0 6 1.567 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none" />
-    </svg>
-  ),
+  1: <img src={icon4} alt="" aria-hidden="true" width="65" height="56" />,
+  2: <img src={icon1} alt="" aria-hidden="true" width="65" height="56" />,
+  3: <img src={icon2} alt="" aria-hidden="true" width="65" height="56" />,
 }
 
 export default function Features() {
@@ -49,8 +34,10 @@ export default function Features() {
                 <div className="features-section__icon-wrap">
                   {feature.icon}
                 </div>
-                <h3 className="features-section__item-title">{feature.title}</h3>
-                <p className="features-section__item-desc">{feature.description}</p>
+                <div className="features-section__item-body">
+                  <h3 className="features-section__item-title">{feature.title}</h3>
+                  <p className="features-section__item-desc">{feature.description}</p>
+                </div>
               </li>
             ))}
           </ul>
