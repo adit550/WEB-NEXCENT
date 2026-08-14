@@ -6,8 +6,8 @@ import icon2 from '../assets/Icon (2).svg'
 
 const ICON_MAP: FeatureIconMap = {
   1: <img src={icon4} alt="" aria-hidden="true" width="65" height="56" />,
-  2: <img src={icon1} alt="" aria-hidden="true" width="65" height="56" />,
-  3: <img src={icon2} alt="" aria-hidden="true" width="65" height="56" />,
+  2: <img src={icon1} alt="" aria-hidden="true" width="48" height="48" />,
+  3: <img src={icon2} alt="" aria-hidden="true" width="48" height="48" />,
 }
 
 export default function Features() {

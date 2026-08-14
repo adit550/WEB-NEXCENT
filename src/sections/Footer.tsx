@@ -6,11 +6,13 @@ import type { SocialLink } from '../types'
 
 const SOCIAL_LINKS: SocialLink[] = [
   {
-    label: 'Facebook',
+    label: 'Instagram',
     href: '#',
     icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
       </svg>
     ) as ReactNode,
   },
@@ -20,17 +22,6 @@ const SOCIAL_LINKS: SocialLink[] = [
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
-      </svg>
-    ) as ReactNode,
-  },
-  {
-    label: 'LinkedIn',
-    href: '#',
-    icon: (
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-        <rect x="2" y="9" width="4" height="12" />
-        <circle cx="4" cy="4" r="2" />
       </svg>
     ) as ReactNode,
   },
@@ -66,7 +57,7 @@ export default function Footer() {
             <img src={logo2} alt="Nexcent" className="footer__logo-img" />
           </a>
           <p className="footer__tagline">
-            Copyright © {new Date().getFullYear()} Nexcent ltd.
+            Copyright © 2020 Nexcent ltd.
             <br />
             All rights reserved
           </p>
@@ -81,25 +72,28 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Col 2 & 3: Link groups */}
-        {(linkGroups ?? []).map((group) => (
-          <div key={group.heading} className="footer__link-group">
-            <h3 className="footer__link-heading">{group.heading}</h3>
-            <ul className="footer__link-list">
-              {group.links.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} className="footer__link">
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+        {/* Col 2, 3 & 4: Links wrapper */}
+        <div className="footer__links">
 
-        {/* Col 4: Newsletter */}
-        <div className="footer__newsletter">
-          <h3 className="footer__link-heading">Stay up to date</h3>
+          {/* Col 2 & 3: Link groups */}
+          {(linkGroups ?? []).map((group) => (
+            <div key={group.heading} className="footer__link-group">
+              <h3 className="footer__link-heading">{group.heading}</h3>
+              <ul className="footer__link-list">
+                {group.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="footer__link">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          {/* Col 4: Newsletter */}
+          <div className="footer__newsletter">
+            <h3 className="footer__link-heading">Stay up to date</h3>
           <form
             className="footer__newsletter-form"
             onSubmit={handleSubmit}
@@ -155,6 +149,8 @@ export default function Footer() {
             )}
           </form>
         </div>
+
+        </div>{/* end footer__links */}
 
       </div>
     </footer>

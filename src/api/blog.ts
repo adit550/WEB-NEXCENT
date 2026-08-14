@@ -1,8 +1,8 @@
 import type { BlogPost } from '../types'
 
-import blog1 from '../assets/blog-1.jpg'
-import blog2 from '../assets/blog-2.jpg'
-import blog3 from '../assets/blog-3.jpg'
+import blog1 from '../assets/1.svg'
+import blog2 from '../assets/2.svg'
+import blog3 from '../assets/3.svg'
 
 const BLOG_DATA: BlogPost[] = [
   {

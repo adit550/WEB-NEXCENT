@@ -1,29 +1,22 @@
-import icon3 from '../assets/Icon 3.png'
-import icon from '../assets/Icon.png'
+import icon5 from '../assets/Icon (5).svg'
+import icon6 from '../assets/Icon (6).svg'
+import icon7 from '../assets/Icon (7).svg'
+import icon8 from '../assets/Icon (8).svg'
 import { useStats } from '../hooks/useStats'
 import type { StatIconMap } from '../hooks/useStats'
 
 const ICON_MAP: StatIconMap = {
   members: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="9" cy="7" r="4" stroke="currentColor" strokeWidth="1.8" fill="none" />
-      <path d="M2 21c0-4 3.134-7 7-7s7 3 7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-      <path d="M22 21c0-3-2-5.5-5-6.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" fill="none" />
-    </svg>
+    <img src={icon5} alt="" aria-hidden="true" width="48" height="48" />
   ),
   clubs: (
-    <img src={icon3} width="24" height="24" alt="" aria-hidden="true" />
+    <img src={icon7} alt="" aria-hidden="true" width="48" height="48" />
   ),
   eventBookings: (
-    <img src={icon} width="24" height="24" alt="" aria-hidden="true" />
+    <img src={icon6} alt="" aria-hidden="true" width="48" height="48" />
   ),
   payments: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" strokeWidth="1.8" fill="none" />
-      <line x1="2" y1="10" x2="22" y2="10" stroke="currentColor" strokeWidth="1.8" />
-      <line x1="6" y1="15" x2="10" y2="15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </svg>
+    <img src={icon8} alt="" aria-hidden="true" width="48" height="48" />
   ),
 }
 
@@ -35,7 +28,8 @@ export default function Stats() {
       <div className="stats-section__inner">
         <div className="stats-section__content">
           <h2 id="stats-title" className="stats-section__title">
-            Helping a local{' '}
+            Helping a local
+            <br />
             <span className="stats-section__title-highlight">
               business reinvent itself
             </span>
