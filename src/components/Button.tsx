@@ -1,6 +1,6 @@
 interface ButtonProps {
   label: string
-  variant?: 'primary' | 'outline'
+  variant?: 'primary' | 'outline' | 'text'
   onClick?: () => void
   type?: 'button' | 'submit'
 }

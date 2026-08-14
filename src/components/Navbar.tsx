@@ -41,7 +41,7 @@ export default function Navbar() {
 
         {/* Desktop action buttons */}
         <div className="navbar__actions">
-          <Button label="Login" variant="outline" />
+          <Button label="Login" variant="text" />
           <Button label="Sign up" variant="primary" />
         </div>
 
@@ -80,7 +80,7 @@ export default function Navbar() {
           ))}
         </ul>
         <div className="navbar__mobile-actions">
-          <Button label="Login" variant="outline" onClick={() => setMenuOpen(false)} />
+          <Button label="Login" variant="text" onClick={() => setMenuOpen(false)} />
           <Button label="Sign up" variant="primary" onClick={() => setMenuOpen(false)} />
         </div>
       </div>

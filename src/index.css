@@ -195,6 +195,22 @@ select {
   outline-offset: 3px;
 }
 
+.btn--text {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: transparent;
+}
+
+.btn--text:hover {
+  background-color: rgba(76, 175, 79, 0.08);
+  color: var(--color-primary-dark);
+}
+
+.btn--text:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 /* ============================================
    LAYOUT CONTAINER UTILITY
    ============================================ */

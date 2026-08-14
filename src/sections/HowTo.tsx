@@ -7,7 +7,7 @@ import characterImage from '../assets/Character.svg'
 
 export default function HowTo() {
   return (
-    <section className="howto-section" aria-labelledby="howto-title">
+    <section className="howto-section" id="feature" aria-labelledby="howto-title">
 
       {/* ── Illustration ─────────────────────────────────────────────
           One container, position:relative, 441×433 px (Figma frame).
